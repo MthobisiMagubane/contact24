@@ -6,7 +6,7 @@ const companies = (req, res) => {
   const dirPath = path.join(__dirname, "../assets/images/companies");
   const files = fs.readdirSync(dirPath);
   const imageUrls = files.map(
-    (file) => `http://localhost:${process.env.PORT}/images/companies/${file}`
+    (file) => `${process.env.DOMAINNAME}/images/companies/${file}`
   );
   res.json(imageUrls);
 };
